@@ -1,0 +1,27 @@
+version: "3.4"
+services:
+    frontend:
+        container_name: frontend
+        image: frontend:1.0.0
+        restart: always
+        build:
+            context: .
+            dockerfile: Frontend/WebSite/Dockerfile
+        ports: 
+            - "53000:80"
+        networks: 
+            - backend_network
+    backend:
+        container_name: backend
+        image: backend:1.0.0
+        restart: always
+        build:
+            context: .
+            dockerfile: Backend/WebApi/Dockerfile
+        ports: 
+            - "52000:80"
+        networks: 
+            - backend_network
+networks: 
+    backend_network:
+        name: backend_network

@@ -1,0 +1,13 @@
+services:
+  frontend.website:
+    build:
+      context: C:\Users\Usuario\source\repos\Backend
+      dockerfile: Frontend/WebSite/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: frontendwebsite
+    ports:
+    - target: 80
+    volumes:
+    - C:\Users\Usuario\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

@@ -1,0 +1,12 @@
+C:\Users\Usuario\source\repos\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Business.deps.json
+C:\Users\Usuario\source\repos\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Business.dll
+C:\Users\Usuario\source\repos\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Business.pdb
+C:\Users\Usuario\source\repos\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Domain.dll
+C:\Users\Usuario\source\repos\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Domain.pdb
+C:\Users\Usuario\source\repos\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.csproj.CopyComplete
+C:\Users\Usuario\source\repos\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.dll
+C:\Users\Usuario\source\repos\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.pdb

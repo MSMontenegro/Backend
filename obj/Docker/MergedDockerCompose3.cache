@@ -1,0 +1,70 @@
+services:
+  backend.webapi:
+    build:
+      context: C:\Users\Usuario\source\repos\Backend
+      dockerfile: Backend/WebApi/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Backend.WebApi
+      target: base
+    container_name: Backend.WebApi
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: backendwebapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/Backend.WebApi.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    tty: true
+    volumes:
+    - C:\Users\Usuario\source\repos\Backend\Backend\WebApi:/app:rw
+    - C:\Users\Usuario\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Usuario\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Usuario\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\Usuario\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\Usuario\source\repos\Backend:/src:rw
+  frontend.website:
+    build:
+      context: C:\Users\Usuario\source\repos\Backend
+      dockerfile: Frontend/WebSite/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Frontend.WebSite
+      target: base
+    container_name: Frontend.WebSite
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: frontendwebsite:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/netcoreapp3.1/Frontend.WebSite.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    tty: true
+    volumes:
+    - C:\Users\Usuario\source\repos\Backend\Frontend\WebSite:/app:rw
+    - C:\Users\Usuario\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Usuario\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Usuario\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    - C:\Users\Usuario\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\Usuario\source\repos\Backend:/src:rw
+version: '3.4'
